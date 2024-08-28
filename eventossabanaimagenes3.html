@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Sabana Africana</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS Internos -->
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #f7f5f2;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        /* Header */
+        .header {
+            background-image: url('images/cover-photo.jpg'); /* Imagen de portada adecuada */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .header .btn {
+            background-color: #f4a261;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            z-index: 2;
+            position: relative;
+        }
+
+        .header .btn:hover {
+            background-color: #e76f51;
+        }
+
+        /* Logo en el header */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px; /* Ajusta el tamaño según sea necesario */
+        }
+
+        /* Secciones */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #264653;
+        }
+
+        .about p, .services .service-item p, .menus p {
+            margin: 20px auto;
+            max-width: 700px;
+        }
+
+        .service-item {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            background-color: #2a9d8f;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #264653;
+            transform: scale(1.05);
+        }
+
+        /* Menú */
+        .menu-item {
+            margin-bottom: 30px;
+            background-color: #f0e7db;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            color: #2a9d8f;
+        }
+
+        .menu-item p {
+            margin: 5px 0;
+        }
+
+        /* Formulario de Contacto */
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .contact input, .contact textarea {
+            padding: 15px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact button {
+            align-self: center;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #264653;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Efectos Visuales */
+        a, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="C:\Users\LAB2-PC1-TLT\Downloads\logo.jpg" alt="Logo de Eventos Sabana Africana" class="logo"> <!-- Logo -->
+        <div class="container">
+            <h1>Eventos Sabana Africana</h1>
+            <p>Descubre la Magia de la Sabana en Cada Evento</p>
+            <a href="#services" class="btn">Explora nuestros servicios</a>
+        </div>
+    </header>
+
+    <!-- About Us -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Nosotros</h2>
+            <p>Somos una empresa apasionada por crear eventos inolvidables inspirados en la rica cultura y belleza de la sabana africana. Nuestro equipo se dedica a ofrecer experiencias únicas, llenas de magia, autenticidad y creatividad.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Servicios</h2>
+            <div class="service-item">
+                <h3>Eventos Privados</h3>
+                <p>Celebra tus momentos más especiales con nuestros eventos temáticos únicos, diseñados especialmente para ti.</p>
+            </div>
+            <div class="service-item">
+                <h3>Eventos Corporativos</h3>
+                <p>Organizamos eventos corporativos que combinan profesionalismo y diversión en un entorno inspirado en la sabana africana.</p>
+            </div>
+            <div class="service-item">
+                <h3>Experiencias Personalizadas</h3>
+                <p>Adaptamos cada detalle para que tu evento sea una experiencia personalizada, acorde a tus deseos y necesidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menus -->
+    <section id="menus" class="menus">
+        <div class="container">
+            <h2>Experiencia Gastronómica</h2>
+            <p>Disfruta de nuestros menús únicos inspirados en los sabores de la sabana africana.</p>
+            
+            <!-- Menú 1 -->
+            <div class="menu-item">
+                <img src="C:\Users\LAB2-PC1-TLT\Downloads\menu1.jpg" alt="Menú Sabores de la Sabana"> <!-- Imagen del menú -->
+                <h3>Menú "Sabores de la Sabana"</h3>
+                <p><strong>Entrada:</strong> Ensalada de mango, aguacate y nueces con vinagreta de miel.</p>
+                <p><strong>Plato Principal:</strong> Estofado de ternera con especias africanas, acompañado de couscous con verduras.</p>
+                <p><strong>Postre:</strong> Tartaleta de plátano con caramelo y helado de vainilla.</p>
+                <p><strong>Costo:</strong> $25 USD por persona</p>
+            </div>
+
+            <!-- Menú 2 -->
+            <div class="menu-item">
+                <img src="C:\Users\LAB2-PC1-TLT\Downloads\menu2.jpg" alt="Menú Safari Gourmet"> <!-- Imagen del menú -->
+                <h3>Menú "Safari Gourmet"</h3>
+                <p><strong>Entrada:</strong> Sopa de batata y jengibre con un toque de coco.</p>
+                <p><strong>Plato Principal:</strong> Pollo a la brasa con salsa de tamarindo y arroz pilaf.</p>
+                <p><strong>Postre:</strong> Pudding de coco con frutas tropicales.</p>
+                <p><strong>Costo:</strong> $30 USD por persona</p>
+            </div>
+
+            <!-- Menú 3 -->
+            <div class="menu-item">
+                <img src="C:\Users\LAB2-PC1-TLT\Downloads\menu3.jpg" alt="Menú Oasis Vegetariano"> <!-- Imagen del menú -->
+                <h3>Menú "Oasis Vegetariano"</h3>
+                <p><strong>Entrada:</strong> Hummus de garbanzos con pan de pita y crudités.</p>
+                <p><strong>Plato Principal:</strong> Curry de vegetales con arroz basmati y naan.</p>
+                <p><strong>Postre:</strong> Mousse de maracuyá con frutas frescas.</p>
+                <p><strong>Costo:</strong> $28 USD por persona</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eventos Sabana Africana. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
